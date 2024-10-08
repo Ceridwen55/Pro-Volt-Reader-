@@ -1,18 +1,16 @@
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
 
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+int readPin = A5;
+void setup() 
+{
+  pinMode(readPin,INPUT);
+  Serial.begin(9600);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+void loop() 
+{
+  
+  Serial.print(analogRead(readPin));
 }
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
-}
